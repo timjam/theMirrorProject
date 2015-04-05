@@ -14,6 +14,8 @@ def main():
     question.setLeRiDefinition( newLeRiDefinition )
     question.setConLibDefinition( newConLibDefinition )
 
+    question.storeData(newLeRiDefinition, newConLibDefinition)
+
     question.showData()
 
     return 0
