@@ -16,8 +16,6 @@ def main():
 
     question.storeData(newLeRiDefinition, newConLibDefinition)
 
-    question.showData()
-
     return 0
 
 main()
