@@ -16,7 +16,7 @@ class Question:
         self.dbname = 'theMirrorProject-questions.db'
         self.tablename = 'q{0}'.format(self.questionID)
         
-        cmd = "create table if not exists {0} (def1 integer, def2 integer)".format(self.tablename) #Can't have spaces in the table name. Create a table with the question ID somehow
+        cmd = "create table if not exists {0} (def1 integer, def2 integer)".format(self.tablename)
         DbHandler.execDB( self.dbname, cmd)
 
 
@@ -35,6 +35,13 @@ class Question:
         DbHandler.showTables( self.dbname )
         DbHandler.showTableValues( self.dbname, self.tablename )
 
+    def loadLeRiDefinitions(self):
+
+        return DbHandler.getXValues( self.dbname, self.tablename )
+
+    def loadConLibDefinitions(self):
+        
+        return DbHandler.getYValues( self.dbname, self.tablename )
 
 
     # Getters

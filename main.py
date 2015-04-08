@@ -1,4 +1,5 @@
 import Question
+import matplotlib.pyplot as plt
 
 def main():
 
@@ -15,6 +16,12 @@ def main():
     question.setConLibDefinition( newConLibDefinition )
 
     question.storeData(newLeRiDefinition, newConLibDefinition)
+
+    plt.plot( [x-2 for x in question.loadLeRiDefinitions()], [y-2 for y in question.loadConLibDefinitions()], 'ro' )
+    plt.axis( [-3, 3, -3, 3] )
+    plt.show()
+
+
 
     return 0
 
